@@ -1,0 +1,54 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+print("Welcome to rock paper scissors game")
+import random
+image_game=[rock, paper, scissors]
+choice= int(input(" what do you choose? Type 0 for Rock, 1 for Paper or 2 for scissors, "))
+print(image_game[choice])
+possible_actions = ["0", "1", "2"]
+computer_action =int( random.choice(possible_actions))
+print(image_game[computer_action] )
+print(f"\nYou chose {image_game[choice]}, computer chose {image_game[computer_action]}.\n")
+if image_game[choice] == image_game[computer_action]:
+    print(f"Both players selected {image_game[choice]}. It's a tie!")
+elif image_game[choice] =="0":
+    if image_game[computer_action] == "2":
+        print("Rock beats scissors! You win!")
+else:
+        print("Paper beats rock! You lose.")
+if image_game[choice] == "1":
+    if image_game[computer_action] == "0":
+        print("Paper beats rock! You win!")
+    else:
+        print("Scissors beats paper! You lose.")
+elif image_game[choice] == "2":
+    if image_game[computer_action] == "1":
+        print("Scissors beats paper! You win!")
+    else:
+        print("Rock beats scissors! You lose.")
